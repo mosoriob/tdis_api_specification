@@ -880,11 +880,6 @@ paths:
       required: true
   /records/{recordId}/messages:
     get:
-      parameters:
-      - name: recordId
-        description: A unique identifier for a Record.
-        in: path
-        required: true
       responses:
         "200":
           content:
@@ -918,10 +913,6 @@ paths:
                   user:
                     id: 41
         required: true
-      parameters:
-      - name: recordId
-        in: path
-        required: true
       responses:
         "201":
           description: Message created
@@ -930,20 +921,26 @@ paths:
       summary: Send a message associated with record
     parameters:
     - name: recordId
+      description: A unique identifier for a `Record`.
+      schema:
+        type: string
       in: path
       required: true
   /records/{recordId}/notifications:
     get:
-      parameters:
-      - name: recordId
-        in: path
-        required: true
       responses:
         "200":
           description: Successful response - returns a single `Notifications`.
       security:
       - apiKeyAuth: []
       summary: Get all notifications
+    parameters:
+    - name: recordId
+      description: A unique identifier for a `Record`.
+      schema:
+        type: string
+      in: path
+      required: true
   /models/{modelId}/history:
     get:
       parameters:
