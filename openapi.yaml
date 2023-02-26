@@ -7,7 +7,7 @@ info:
   contact:
     email: bporter@csr.utexas.edu
 servers:
-- url: http://localhost:8080
+  - url: http://localhost:8080
 paths:
   /status:
     get:
@@ -16,19 +16,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Status'
+                $ref: "#/components/schemas/Status"
           description: OK
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       description: ""
   /artifacts:
     summary: Path used to manage the list of artifacts.
-    description: "The REST endpoint/path used to list and create zero or more `Artifact`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Artifact`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Artifacts
+        - Artifacts
       responses:
         "200":
           content:
@@ -36,10 +37,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Artifact'
+                  $ref: "#/components/schemas/Artifact"
           description: Successful response - returns an array of `Artifact` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getArtifacts
       summary: List All Artifacts
       description: Gets a list of all `Artifact` entities.
@@ -49,35 +50,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Artifact'
+              $ref: "#/components/schemas/Artifact"
         required: true
       tags:
-      - Artifacts
+        - Artifacts
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createArtifact
       summary: Create a Artifact
       description: Creates a new instance of a `Artifact`.
   /artifacts/{artifactId}:
     summary: Path used to manage a single Artifact.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Artifact`.  This path contains `GET`, `PUT`, and `DELETE` operations\
       \ used to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Artifacts
+        - Artifacts
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Artifact'
+                $ref: "#/components/schemas/Artifact"
           description: Successful response - returns a single `Artifact`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getArtifact
       summary: Get a Artifact
       description: Gets the details of a single instance of a `Artifact`.
@@ -87,44 +89,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Artifact'
+              $ref: "#/components/schemas/Artifact"
         required: true
       tags:
-      - Artifacts
+        - Artifacts
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateArtifact
       summary: Update a Artifact
       description: Updates an existing `Artifact`.
     delete:
       tags:
-      - Artifacts
+        - Artifacts
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteArtifact
       summary: Delete a Artifact
       description: Deletes an existing `Artifact`.
     parameters:
-    - name: artifactId
-      description: A unique identifier for a `Artifact`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: artifactId
+        description: A unique identifier for a `Artifact`.
+        schema:
+          type: string
+        in: path
+        required: true
   /agencies:
     summary: Path used to manage the list of agencies.
-    description: "The REST endpoint/path used to list and create zero or more `Agency`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Agency`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Agencies
+        - Agencies
       responses:
         "200":
           content:
@@ -132,10 +135,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Agency'
+                  $ref: "#/components/schemas/Agency"
           description: Successful response - returns an array of `Agency` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getAgencies
       summary: List All Agencies
       description: Gets a list of all `Agency` entities.
@@ -145,35 +148,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Agency'
+              $ref: "#/components/schemas/Agency"
         required: true
       tags:
-      - Agencies
+        - Agencies
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createAgency
       summary: Create a Agency
       description: Creates a new instance of a `Agency`.
   /agencies/{agencyId}:
     summary: Path used to manage a single Agency.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Agency`.  This path contains `GET`, `PUT`, and `DELETE` operations\
       \ used to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Agencies
+        - Agencies
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Agency'
+                $ref: "#/components/schemas/Agency"
           description: Successful response - returns a single `Agency`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getAgency
       summary: Get a Agency
       description: Gets the details of a single instance of a `Agency`.
@@ -183,44 +187,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Agency'
+              $ref: "#/components/schemas/Agency"
         required: true
       tags:
-      - Agencies
+        - Agencies
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateAgency
       summary: Update a Agency
       description: Updates an existing `Agency`.
     delete:
       tags:
-      - Agencies
+        - Agencies
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteAgency
       summary: Delete a Agency
       description: Deletes an existing `Agency`.
     parameters:
-    - name: agencyId
-      description: A unique identifier for a `Agency`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: agencyId
+        description: A unique identifier for a `Agency`.
+        schema:
+          type: string
+        in: path
+        required: true
   /collections:
     summary: Path used to manage the list of collections.
-    description: "The REST endpoint/path used to list and create zero or more `Collection`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Collection`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Collections
+        - Collections
       responses:
         "200":
           content:
@@ -228,10 +233,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Collection'
+                  $ref: "#/components/schemas/Collection"
           description: Successful response - returns an array of `Collection` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getCollections
       summary: List All Collections
       description: Gets a list of all `Collection` entities.
@@ -241,35 +246,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Collection'
+              $ref: "#/components/schemas/Collection"
         required: true
       tags:
-      - Collections
+        - Collections
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createCollection
       summary: Create a Collection
       description: Creates a new instance of a `Collection`.
   /collections/{collectionId}:
     summary: Path used to manage a single Collection.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Collection`.  This path contains `GET`, `PUT`, and `DELETE` operations\
       \ used to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Collections
+        - Collections
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Collection'
+                $ref: "#/components/schemas/Collection"
           description: Successful response - returns a single `Collection`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getCollection
       summary: Get a Collection
       description: Gets the details of a single instance of a `Collection`.
@@ -279,44 +285,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Collection'
+              $ref: "#/components/schemas/Collection"
         required: true
       tags:
-      - Collections
+        - Collections
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateCollection
       summary: Update a Collection
       description: Updates an existing `Collection`.
     delete:
       tags:
-      - Collections
+        - Collections
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteCollection
       summary: Delete a Collection
       description: Deletes an existing `Collection`.
     parameters:
-    - name: collectionId
-      description: A unique identifier for a `Collection`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: collectionId
+        description: A unique identifier for a `Collection`.
+        schema:
+          type: string
+        in: path
+        required: true
   /datum:
     summary: Path used to manage the list of data.
-    description: "The REST endpoint/path used to list and create zero or more `Datum`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Datum`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Datums
+        - Datums
       responses:
         "200":
           content:
@@ -324,10 +331,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Datum'
+                  $ref: "#/components/schemas/Datum"
           description: Successful response - returns an array of `Datum` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getData
       summary: List All Data
       description: Gets a list of all `Datum` entities.
@@ -337,35 +344,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Datum'
+              $ref: "#/components/schemas/Datum"
         required: true
       tags:
-      - Datums
+        - Datums
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createDatum
       summary: Create a Datum
       description: Creates a new instance of a `Datum`.
   /datum/{datumId}:
     summary: Path used to manage a single Datum.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Datum`.  This path contains `GET`, `PUT`, and `DELETE` operations used\
       \ to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Datums
+        - Datums
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Datum'
+                $ref: "#/components/schemas/Datum"
           description: Successful response - returns a single `Datum`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getDatum
       summary: Get a Datum
       description: Gets the details of a single instance of a `Datum`.
@@ -375,44 +383,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Datum'
+              $ref: "#/components/schemas/Datum"
         required: true
       tags:
-      - Datums
+        - Datums
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateDatum
       summary: Update a Datum
       description: Updates an existing `Datum`.
     delete:
       tags:
-      - Datums
+        - Datums
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteDatum
       summary: Delete a Datum
       description: Deletes an existing `Datum`.
     parameters:
-    - name: datumId
-      description: A unique identifier for a `Datum`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: datumId
+        description: A unique identifier for a `Datum`.
+        schema:
+          type: string
+        in: path
+        required: true
   /layers:
     summary: Path used to manage the list of layers.
-    description: "The REST endpoint/path used to list and create zero or more `Layer`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Layer`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Layers
+        - Layers
       responses:
         "200":
           content:
@@ -420,10 +429,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Layer'
+                  $ref: "#/components/schemas/Layer"
           description: Successful response - returns an array of `Layer` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getLayers
       summary: List All Layers
       description: Gets a list of all `Layer` entities.
@@ -433,35 +442,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Layer'
+              $ref: "#/components/schemas/Layer"
         required: true
       tags:
-      - Layers
+        - Layers
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createLayer
       summary: Create a Layer
       description: Creates a new instance of a `Layer`.
   /layers/{layerId}:
     summary: Path used to manage a single Layer.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Layer`.  This path contains `GET`, `PUT`, and `DELETE` operations used\
       \ to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Layers
+        - Layers
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Layer'
+                $ref: "#/components/schemas/Layer"
           description: Successful response - returns a single `Layer`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getLayer
       summary: Get a Layer
       description: Gets the details of a single instance of a `Layer`.
@@ -471,42 +481,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Layer'
+              $ref: "#/components/schemas/Layer"
         required: true
       tags:
-      - Layers
+        - Layers
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateLayer
       summary: Update a Layer
       description: Updates an existing `Layer`.
     delete:
       tags:
-      - Layers
+        - Layers
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteLayer
       summary: Delete a Layer
       description: Deletes an existing `Layer`.
     parameters:
-    - name: layerId
-      description: A unique identifier for a `Layer`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: layerId
+        description: A unique identifier for a `Layer`.
+        schema:
+          type: string
+        in: path
+        required: true
   /users:
     summary: Path used to manage the list of users.
-    description: "The REST endpoint/path used to list and create zero or more `User`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `User`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
+      tags:
+        - Users
       responses:
         "200":
           content:
@@ -514,10 +527,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: "#/components/schemas/User"
           description: Successful response - returns an array of `User` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getUsers
       summary: List All Users
       description: Gets a list of all `User` entities.
@@ -527,31 +540,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
         required: true
+      tags:
+        - Users
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createUser
       summary: Create a User
       description: Creates a new instance of a `User`.
   /users/{userId}:
     summary: Path used to manage a single User.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `User`.  This path contains `GET`, `PUT`, and `DELETE` operations used\
       \ to perform the get, update, and delete tasks, respectively."
     get:
+      tags:
+        - Users
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
           description: Successful response - returns a single `User`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getUser
       summary: Get a User
       description: Gets the details of a single instance of a `User`.
@@ -561,8 +579,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: "#/components/schemas/User"
         required: true
+      tags:
+        - Users
       responses:
         "202":
           description: Successful response.
@@ -570,6 +590,8 @@ paths:
       summary: Update a User
       description: Updates an existing `User`.
     delete:
+      tags:
+        - Users
       responses:
         "204":
           description: Successful response.
@@ -577,18 +599,21 @@ paths:
       summary: Delete a User
       description: Deletes an existing `User`.
     parameters:
-    - name: userId
-      description: A unique identifier for a `User`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: userId
+        description: A unique identifier for a `User`.
+        schema:
+          type: string
+        in: path
+        required: true
   /roles:
     summary: Path used to manage the list of roles.
-    description: "The REST endpoint/path used to list and create zero or more `Role`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Role`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
+      tags:
+        - Roles
       responses:
         "200":
           content:
@@ -596,10 +621,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Role'
+                  $ref: "#/components/schemas/Role"
           description: Successful response - returns an array of `Role` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getRoles
       summary: List All Roles
       description: Gets a list of all `Role` entities.
@@ -609,31 +634,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Role'
+              $ref: "#/components/schemas/Role"
         required: true
+      tags:
+        - Roles
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createRole
       summary: Create a Role
       description: Creates a new instance of a `Role`.
   /roles/{roleId}:
     summary: Path used to manage a single Role.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Role`.  This path contains `GET`, `PUT`, and `DELETE` operations used\
       \ to perform the get, update, and delete tasks, respectively."
     get:
+      tags:
+        - Roles
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Role'
+                $ref: "#/components/schemas/Role"
           description: Successful response - returns a single `Role`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getRole
       summary: Get a Role
       description: Gets the details of a single instance of a `Role`.
@@ -643,38 +673,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Role'
+              $ref: "#/components/schemas/Role"
         required: true
+      tags:
+        - Roles
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateRole
       summary: Update a Role
       description: Updates an existing `Role`.
     delete:
+      tags:
+        - Roles
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteRole
       summary: Delete a Role
       description: Deletes an existing `Role`.
     parameters:
-    - name: roleId
-      description: A unique identifier for a `Role`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: roleId
+        description: A unique identifier for a `Role`.
+        schema:
+          type: string
+        in: path
+        required: true
   /models:
     summary: Path used to manage the list of models.
-    description: "The REST endpoint/path used to list and create zero or more `Model`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Model`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
+      tags:
+        - Models
       responses:
         "200":
           content:
@@ -682,10 +719,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Model'
+                  $ref: "#/components/schemas/Model"
           description: Successful response - returns an array of `Model` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getModels
       summary: List All Models
       description: Gets a list of all `Model` entities.
@@ -695,31 +732,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Model'
+              $ref: "#/components/schemas/Model"
         required: true
+      tags:
+        - Models
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createModel
       summary: Create a Model
       description: Creates a new instance of a `Model`.
   /models/{modelId}:
     summary: Path used to manage a single Model.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Model`.  This path contains `GET`, `PUT`, and `DELETE` operations used\
       \ to perform the get, update, and delete tasks, respectively."
     get:
+      tags:
+        - Models
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Model'
+                $ref: "#/components/schemas/Model"
           description: Successful response - returns a single `Model`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getModel
       summary: Get a Model
       description: Gets the details of a single instance of a `Model`.
@@ -729,41 +771,46 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Model'
+              $ref: "#/components/schemas/Model"
         required: true
+      tags:
+        - Models
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateModel
       summary: Update a Model
       description: Updates an existing `Model`.
     delete:
+      tags:
+        - Models
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteModel
       summary: Delete a Model
       description: Deletes an existing `Model`.
     parameters:
-    - name: modelId
-      description: A unique identifier for a `Model`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: modelId
+        description: A unique identifier for a `Model`.
+        schema:
+          type: string
+        in: path
+        required: true
   /models/search: {}
   /contacts:
     summary: Path used to manage the list of contacts.
-    description: "The REST endpoint/path used to list and create zero or more `Contact`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Contact`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
       tags:
-      - Contacts
+        - Contacts
       responses:
         "200":
           content:
@@ -771,10 +818,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Contact'
+                  $ref: "#/components/schemas/Contact"
           description: Successful response - returns an array of `Contact` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getContacts
       summary: List All Contacts
       description: Gets a list of all `Contact` entities.
@@ -784,35 +831,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Contact'
+              $ref: "#/components/schemas/Contact"
         required: true
       tags:
-      - Contacts
+        - Contacts
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createContact
       summary: Create a Contact
       description: Creates a new instance of a `Contact`.
   /contacts/{contactId}:
     summary: Path used to manage a single Contact.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Contact`.  This path contains `GET`, `PUT`, and `DELETE` operations\
       \ used to perform the get, update, and delete tasks, respectively."
     get:
       tags:
-      - Contacts
+        - Contacts
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Contact'
+                $ref: "#/components/schemas/Contact"
           description: Successful response - returns a single `Contact`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getContact
       summary: Get a Contact
       description: Gets the details of a single instance of a `Contact`.
@@ -822,39 +870,40 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Contact'
+              $ref: "#/components/schemas/Contact"
         required: true
       tags:
-      - Contacts
+        - Contacts
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateContact
       summary: Update a Contact
       description: Updates an existing `Contact`.
     delete:
       tags:
-      - Contacts
+        - Contacts
       responses:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteContact
       summary: Delete a Contact
       description: Deletes an existing `Contact`.
     parameters:
-    - name: contactId
-      description: A unique identifier for a `Contact`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: contactId
+        description: A unique identifier for a `Contact`.
+        schema:
+          type: string
+        in: path
+        required: true
   /records:
     summary: Path used to manage the list of records.
-    description: "The REST endpoint/path used to list and create zero or more `Record`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Record`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
@@ -865,10 +914,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Record'
+                  $ref: "#/components/schemas/Record"
           description: Successful response - returns an array of `Record` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getRecords
       summary: List All Records
       description: Gets a list of all `Record` entities.
@@ -878,19 +927,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Record'
+              $ref: "#/components/schemas/Record"
         required: true
       responses:
         "201":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: createRecord
       summary: Create a Record
       description: Creates a new instance of a `Record`.
   /records/{recordId}:
     summary: Path used to manage a single Record.
-    description: "The REST endpoint/path used to get, update, and delete single instances\
+    description:
+      "The REST endpoint/path used to get, update, and delete single instances\
       \ of an `Record`.  This path contains `GET`, `PUT`, and `DELETE` operations\
       \ used to perform the get, update, and delete tasks, respectively."
     get:
@@ -899,10 +949,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Record'
+                $ref: "#/components/schemas/Record"
           description: Successful response - returns a single `Record`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getRecord
       summary: Get a Record
       description: Gets the details of a single instance of a `Record`.
@@ -912,13 +962,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Record'
+              $ref: "#/components/schemas/Record"
         required: true
       responses:
         "202":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: updateRecord
       summary: Update a Record
       description: Updates an existing `Record`.
@@ -927,17 +977,17 @@ paths:
         "204":
           description: Successful response.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: deleteRecord
       summary: Delete a Record
       description: Deletes an existing `Record`.
     parameters:
-    - name: recordId
-      description: A unique identifier for a `Record`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: recordId
+        description: A unique identifier for a `Record`.
+        schema:
+          type: string
+        in: path
+        required: true
   /records/{recordId}/messages:
     get:
       responses:
@@ -947,25 +997,25 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Message'
+                  $ref: "#/components/schemas/Message"
               examples:
                 Messages:
                   value:
-                  - content: some text
-                    user:
-                      id: 50
-                  - content: some text
-                    user:
-                      id: 54
+                    - content: some text
+                      user:
+                        id: 50
+                    - content: some text
+                      user:
+                        id: 54
           description: Returns a list of messages
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
     post:
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Message'
+              $ref: "#/components/schemas/Message"
             examples:
               Message:
                 value:
@@ -977,39 +1027,39 @@ paths:
         "201":
           description: Message created
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Send a message associated with record
     parameters:
-    - name: recordId
-      description: A unique identifier for a `Record`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: recordId
+        description: A unique identifier for a `Record`.
+        schema:
+          type: string
+        in: path
+        required: true
   /records/{recordId}/notifications:
     get:
       responses:
         "200":
           description: Successful response - returns a single `Notifications`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Get all notifications
     parameters:
-    - name: recordId
-      description: A unique identifier for a `Record`.
-      schema:
-        type: string
-      in: path
-      required: true
-  /models/{modelId}/history:
-    get:
-      parameters:
-      - name: modelId
-        description: A unique identifier for a Model.
+      - name: recordId
+        description: A unique identifier for a `Record`.
         schema:
           type: string
         in: path
         required: true
+  /models/{modelId}/history:
+    get:
+      parameters:
+        - name: modelId
+          description: A unique identifier for a Model.
+          schema:
+            type: string
+          in: path
+          required: true
       responses:
         "200":
           content:
@@ -1017,23 +1067,25 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ModelHistory'
+                  $ref: "#/components/schemas/ModelHistory"
           description: Successful response - returns a Array of `ModelHistory`.
       security:
-      - apiKeyAuth: []
-      summary: Gets a list of all `History` entities related to the `Model` identified
+        - apiKeyAuth: []
+      summary:
+        Gets a list of all `History` entities related to the `Model` identified
         by `modelId`
-      description: Gets a list of all `History` entities related to the `Model` identified
+      description:
+        Gets a list of all `History` entities related to the `Model` identified
         by `modelId`
   /models/{modelId}/fileStructure:
     get:
       parameters:
-      - name: modelId
-        description: A unique identifier for a Model.
-        schema:
-          type: string
-        in: path
-        required: true
+        - name: modelId
+          description: A unique identifier for a Model.
+          schema:
+            type: string
+          in: path
+          required: true
       responses:
         "200":
           content:
@@ -1041,12 +1093,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/FileStructure'
+                  $ref: "#/components/schemas/FileStructure"
           description: Successful response - returns a Array of `fileStructure`.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Get File Structures related to Model
-      description: Gets a list of all `FileStructure` entities related to the `Model`
+      description:
+        Gets a list of all `FileStructure` entities related to the `Model`
         identified by `modelId`
   /records/{recordId}/accept:
     post:
@@ -1054,7 +1107,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RequestBodyAcceptRecord'
+              $ref: "#/components/schemas/RequestBodyAcceptRecord"
             examples:
               accepted:
                 value:
@@ -1065,15 +1118,15 @@ paths:
         "201":
           description: Accept a record by admin
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Accept a record
     parameters:
-    - name: recordId
-      description: A unique identifier for a `Record`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: recordId
+        description: A unique identifier for a `Record`.
+        schema:
+          type: string
+        in: path
+        required: true
   /records/{recordId}/contacts:
     get:
       responses:
@@ -1083,17 +1136,17 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Contact'
+                  $ref: "#/components/schemas/Contact"
           description: Get the contacts of resources
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Get the contacts of resources
     post:
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RequestBodyAssociateContact'
+              $ref: "#/components/schemas/RequestBodyAssociateContact"
             examples:
               associated example:
                 value:
@@ -1106,32 +1159,32 @@ paths:
         "201":
           description: The association between the contact and the resource is done
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Create new contacts
     parameters:
-    - name: recordId
-      schema:
-        type: string
-      in: path
-      required: true
-  /records/{recordId}/messages/{messageId}:
-    delete:
-      parameters:
       - name: recordId
         schema:
           type: string
         in: path
         required: true
-      - name: messageId
-        schema:
-          type: string
-        in: path
-        required: true
+  /records/{recordId}/messages/{messageId}:
+    delete:
+      parameters:
+        - name: recordId
+          schema:
+            type: string
+          in: path
+          required: true
+        - name: messageId
+          schema:
+            type: string
+          in: path
+          required: true
       responses:
         "204":
-          description: 'Delete the message '
+          description: "Delete the message "
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Delete message
   /records/{recordId}/contacts/{contactId}:
     put:
@@ -1139,45 +1192,45 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RequestBodyAssociateContact'
+              $ref: "#/components/schemas/RequestBodyAssociateContact"
         required: true
       responses:
         "201":
           description: Update success
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Update a contact
     delete:
       responses:
         "204":
           description: Contact removed it
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       summary: Remove the contacts from a resource
     parameters:
-    - name: recordId
-      schema:
-        type: string
-      in: path
-      required: true
-    - name: contactId
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: recordId
+        schema:
+          type: string
+        in: path
+        required: true
+      - name: contactId
+        schema:
+          type: string
+        in: path
+        required: true
   /records/{recordId}/status:
     get:
       responses:
         "200":
           description: Success
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
     put:
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Status'
+              $ref: "#/components/schemas/Status"
             examples:
               StatusExample:
                 value:
@@ -1187,13 +1240,13 @@ paths:
         "201":
           description: Update success
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
     post:
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Status'
+              $ref: "#/components/schemas/Status"
             examples:
               StatusExample:
                 value:
@@ -1203,23 +1256,24 @@ paths:
         "201":
           description: Creation success
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
     delete:
       responses:
         "204":
           description: Delete success
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
     parameters:
-    - name: recordId
-      description: A unique identifier for a `Record`.
-      schema:
-        type: string
-      in: path
-      required: true
+      - name: recordId
+        description: A unique identifier for a `Record`.
+        schema:
+          type: string
+        in: path
+        required: true
   /softwares:
     summary: Path used to manage the list of softwares.
-    description: "The REST endpoint/path used to list and create zero or more `Software`\
+    description:
+      "The REST endpoint/path used to list and create zero or more `Software`\
       \ entities.  This path contains a `GET` and `POST` operation to perform the\
       \ list and create tasks, respectively."
     get:
@@ -1230,10 +1284,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Software'
+                  $ref: "#/components/schemas/Software"
           description: Successful response - returns an array of `Software` entities.
       security:
-      - apiKeyAuth: []
+        - apiKeyAuth: []
       operationId: getSoftwares
       summary: List All Softwares
       description: Gets a list of all `Software` entities.
@@ -1243,7 +1297,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Software'
+              $ref: "#/components/schemas/Software"
         required: true
       responses:
         "201":
@@ -1267,7 +1321,7 @@ components:
         comments: Multiple accept
     RequestBodySetStatus:
       title: Root Type for RequestBodySetStatus
-      description: '    '
+      description: "    "
       type: object
       properties:
         tdis_identifier:
@@ -1286,15 +1340,15 @@ components:
     RequestBodyAssociateContact:
       description: ""
       required:
-      - role
-      - user
+        - role
+        - user
       type: object
       properties:
         role:
-          $ref: '#/components/schemas/Role'
+          $ref: "#/components/schemas/Role"
           description: ""
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
           description: ""
       example:
         role:
@@ -1401,7 +1455,7 @@ components:
           items:
             type: string
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
           description: ""
       example:
         user_id: 6
@@ -1413,18 +1467,18 @@ components:
         purpose: artifact purpose.
         accessibility_score: 4
         jurisdiction_with_type_code:
-        - name: Dallas
-          type: Municipality
-        - name: Dallas
-          type: County
+          - name: Dallas
+            type: Municipality
+          - name: Dallas
+            type: County
         contacts:
-        - user_id: 6
-          role_id: 8
+          - user_id: 6
+            role_id: 8
         creator_name: Creator Name
         chain_of_custody:
-        - TDEM
-        - TxDOT
-        - TNRIS
+          - TDEM
+          - TxDOT
+          - TNRIS
         data_stage_score: 3
         distribution_method_id: 2
         distribution_url: https://url.org/1234
@@ -1441,10 +1495,10 @@ components:
         software_version: 3.4.1
         update_interval: Daily
         time_periods:
-        - start_date: 2021-09-01
-          end_date: 2021-09-30
+          - start_date: 2021-09-01
+            end_date: 2021-09-30
         use_constraints:
-        - Public
+          - Public
     Agency:
       title: Root Type for Agency
       description: ""
@@ -1496,11 +1550,11 @@ components:
         label: Example
     Layer:
       title: Root Type for Layer
-      description: '    '
+      description: "    "
       type: object
       properties:
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
           properties:
             id:
               format: int32
@@ -1662,23 +1716,23 @@ components:
         attribute_domain_type_id: 3
         attribute_name: Rainfall
         jurisdiction_with_type_code:
-        - name: Dallas
-          type: Municipality
-        - name: Dallas
-          type: County
+          - name: Dallas
+            type: Municipality
+          - name: Dallas
+            type: County
         codeset_name: High Water Mark Field Guide
         codeset_url: https://url.gov/publication/tm3A24
         completeness_score: 3
         contacts:
-        - user_id: 6
-          role_id: 7
-        - user_id: 6
-          role_id: 8
+          - user_id: 6
+            role_id: 7
+          - user_id: 6
+            role_id: 8
         creator_name: John Doe
         chain_of_custody:
-        - TDEM
-        - TxDOT
-        - TNRIS
+          - TDEM
+          - TxDOT
+          - TNRIS
         data_stage_score: 3
         distribution_method_id: 2
         distribution_url: https://url.org/1234
@@ -1693,8 +1747,8 @@ components:
         value_range_minimum: "0"
         keyword_vocabulary_source: USGS
         keyword_terms:
-        - Rainfall
-        - Precipitation
+          - Rainfall
+          - Precipitation
         license: GNU
         process_step_date: 2021-09-01
         process_step_description: Process step description
@@ -1707,11 +1761,12 @@ components:
         spatial_data_type: raster - other
         update_interval: Daily
         time_periods:
-        - start_date: 2021-09-01
-          end_date: 2021-09-30
+          - start_date: 2021-09-01
+            end_date: 2021-09-30
         use_constraints:
-        - Public
-        extent: "POLYGON((-71.1776585052917 42.3902909739571,-71.1776820268866 42.3903701743239,\
+          - Public
+        extent:
+          "POLYGON((-71.1776585052917 42.3902909739571,-71.1776820268866 42.3903701743239,\
           \ -71.1776063012595 42.3903825660754,-71.1775826583081 42.3903033653531,-71.1776585052917\
           \ 42.3902909739571))"
     Role:
@@ -1731,7 +1786,8 @@ components:
       example:
         id: 3
         name: Curator
-        description: Contact responsible for the quality and formatting of the digital
+        description:
+          Contact responsible for the quality and formatting of the digital
           object and its metadata to enable reuse.
         metadata_level: TDB
     Model:
@@ -1819,31 +1875,31 @@ components:
         creator: some text
         description: some text
         model_types:
-        - some text
-        - some text
+          - some text
+          - some text
         purpose: some text
         extent: some text
         custody_chain:
-        - {}
-        - {}
+          - {}
+          - {}
         license: some text
         keyword_term: some text
         status: some text
         update_interval: some text
         documentation_filenames:
-        - {}
-        - {}
+          - {}
+          - {}
         distribution_url: some text
         software: some text
         software_distributor: some text
         software_version: some text
         time_periods: some text
         twdb_flood_planning_project_ids:
-        - some text
-        - some text
+          - some text
+          - some text
         use_constraints:
-        - some text
-        - some text
+          - some text
+          - some text
         most_recent_status_update: 2018-02-10T09:30Z
         external_identifier: some text
     User:
@@ -1949,29 +2005,29 @@ components:
           description: ""
           type: string
         old_values:
-          $ref: '#/components/schemas/Model'
+          $ref: "#/components/schemas/Model"
           description: ""
         new_values:
-          $ref: '#/components/schemas/Model'
+          $ref: "#/components/schemas/Model"
           description: ""
     Message:
       title: Root Type for Message
       description: ""
       required:
-      - user
+        - user
       type: object
       properties:
         content:
           type: string
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
           description: ""
       example:
         content: A message
     Status:
       description: ""
       required:
-      - status
+        - status
       type: object
       properties:
         status:
@@ -1996,7 +2052,8 @@ components:
         id: 43
         abbr: ADCIRC
         name: ADvanced CIRCulation Model
-        description: "ADCIRC is a system of computer programs for solving time dependent,\
+        description:
+          "ADCIRC is a system of computer programs for solving time dependent,\
           \ free surface circulation and transport problems in two and three dimensions.\
           \ These programs utilize the finite element method in space allowing the\
           \ use of highly flexible, unstructured grids."
@@ -2007,25 +2064,25 @@ components:
       name: x-access-token
       in: header
 tags:
-- name: Agencies
-  description: ""
-- name: Artifacts
-  description: ""
-- name: Collections
-  description: ""
-- name: Contacts
-  description: ""
-- name: Datums
-  description: ""
-- name: Layers
-  description: ""
-- name: Models
-  description: ""
-- name: Records
-  description: ""
-- name: Roles
-  description: ""
-- name: Softwares
-  description: ""
-- name: Users
-  description: ""
+  - name: Agencies
+    description: ""
+  - name: Artifacts
+    description: ""
+  - name: Collections
+    description: ""
+  - name: Contacts
+    description: ""
+  - name: Datums
+    description: ""
+  - name: Layers
+    description: ""
+  - name: Models
+    description: ""
+  - name: Records
+    description: ""
+  - name: Roles
+    description: ""
+  - name: Softwares
+    description: ""
+  - name: Users
+    description: ""
