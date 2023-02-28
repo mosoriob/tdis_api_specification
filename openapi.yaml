@@ -1663,6 +1663,82 @@ paths:
         type: string
       in: path
       required: true
+  /fileformats:
+    summary: Path used to manage the list of fileformats.
+    description: "The REST endpoint/path used to list and create zero or more `FileFormat`\
+      \ entities.  This path contains a `GET` and `POST` operation to perform the\
+      \ list and create tasks, respectively."
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FileFormat'
+          description: Successful response - returns an array of `FileFormat` entities.
+      operationId: getFileFormats
+      summary: List All FileFormats
+      description: Gets a list of all `FileFormat` entities.
+    post:
+      requestBody:
+        description: A new `FileFormat` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileFormat'
+        required: true
+      responses:
+        "201":
+          description: Successful response.
+      operationId: createFileFormat
+      summary: Create a FileFormat
+      description: Creates a new instance of a `FileFormat`.
+  /fileformats/{fileformatId}:
+    summary: Path used to manage a single FileFormat.
+    description: "The REST endpoint/path used to get, update, and delete single instances\
+      \ of an `FileFormat`.  This path contains `GET`, `PUT`, and `DELETE` operations\
+      \ used to perform the get, update, and delete tasks, respectively."
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FileFormat'
+          description: Successful response - returns a single `FileFormat`.
+      operationId: getFileFormat
+      summary: Get a FileFormat
+      description: Gets the details of a single instance of a `FileFormat`.
+    put:
+      requestBody:
+        description: Updated `FileFormat` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileFormat'
+        required: true
+      responses:
+        "202":
+          description: Successful response.
+      operationId: updateFileFormat
+      summary: Update a FileFormat
+      description: Updates an existing `FileFormat`.
+    delete:
+      responses:
+        "204":
+          description: Successful response.
+      operationId: deleteFileFormat
+      summary: Delete a FileFormat
+      description: Deletes an existing `FileFormat`.
+    parameters:
+    - name: fileformatId
+      description: A unique identifier for a `FileFormat`.
+      schema:
+        type: string
+      in: path
+      required: true
 components:
   schemas:
     RequestBodyAcceptRecord:
@@ -2393,8 +2469,10 @@ components:
           items:
             $ref: '#/components/schemas/PropertyConstraint'
         time_periods:
-          $ref: '#/components/schemas/TimePeriod'
           description: ""
+          type: array
+          items:
+            $ref: '#/components/schemas/TimePeriod'
       example:
         tdis_identifier: some text
         controlled_vocabulary:
@@ -2734,6 +2812,12 @@ components:
         description: Process step description.
         id: 2087
     PropertyConstraint:
+      description: ""
+      type: object
+      allOf:
+      - type: object
+      - $ref: '#/components/schemas/BasicResource'
+    FileFormat:
       description: ""
       type: object
       allOf:
