@@ -1802,6 +1802,9 @@ components:
           process:
             $ref: '#/components/schemas/Process'
             description: ""
+          file_formats:
+            $ref: '#/components/schemas/FileFormat'
+            description: ""
       - $ref: '#/components/schemas/Record'
       example:
         tdis_identifier: some text
